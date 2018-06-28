@@ -142,7 +142,34 @@ server.
 
 ### Try it out!
 Browse to http://localhost:8080/manage-zoo and explore the generated
-web interface.
+web application.
+
+The database entities are based on what I did with the Fuse quickstart
+in my [Fuse, AMQ, and DM integration demo](https://github.com/rlucente-se-jboss/integration-demo).
+This XML snippet provides an example of what the data should contain:
+
+    <order id="2017_0001">
+        <customer id="A0001">
+            <name>Antwerp Zoo</name>
+            <city>Antwerp</city>
+            <country>BE</country>
+        </customer>
+        <date>2017-03-01</date>
+        <orderlines>
+            <orderline>
+                <article id="A0001">
+                    <description>Aardvark</description>
+                </article>
+                <quantity>1</quantity>
+            </orderline>
+            <orderline>
+                <article id="A0011">
+                    <description>Alpaca</description>
+                </article>
+                <quantity>10</quantity>
+            </orderline>
+        </orderlines>
+    </order>
 
 ## Caveats
 Make sure that maven is setup correctly or the build will fail.
