@@ -32,7 +32,7 @@ PUSHD $WORKDIR
     ISOK
 
     cat > config-ds.cli <<END1
-embed-server --server-config=standalone-full.xml
+embed-server --server-config=standalone.xml
 /subsystem=datasources/jdbc-driver=postgresql:add(driver-name=postgresql, driver-module-name=org.postgresql, driver-xa-datasource-class-name=org.postgresql.xa.PGXADataSource, driver-class-name=org.postgresql.Driver)
 data-source add  --name=$PGJNDI --driver-name=postgresql \
     --jndi-name="java:jboss/datasources/$PGJNDI" \
