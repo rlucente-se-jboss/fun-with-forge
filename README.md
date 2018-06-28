@@ -144,3 +144,12 @@ server.
 Browse to http://localhost:8080/manage-zoo and explore the generated
 web interface.
 
+## Caveats
+Make sure that maven is setup correctly or the builds will fail.
+You'll need the following repositories in this order for the build
+to work:
+
+* https://maven.repository.redhat.com/earlyaccess/all/
+* https://maven.repository.redhat.com/ga/
+* https://repository.jboss.org/nexus/content/groups/public/
+
