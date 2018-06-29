@@ -193,6 +193,11 @@ This XML snippet provides an example of what the data should contain:
         </orderlines>
     </order>
 
+Basically, you'll create one or more articles, one or more customers,
+and then one or more orderlines that refer to the articles.  Once
+those exist, you can then create orders that refer to the other
+items.
+
 ## Caveats
 Make sure that maven is setup correctly or the build will fail.
 You'll need the following repositories in this order for the build
@@ -201,4 +206,22 @@ to work:
 * https://maven.repository.redhat.com/earlyaccess/all/
 * https://maven.repository.redhat.com/ga/
 * https://repository.jboss.org/nexus/content/groups/public/
+
+## Bugs
+The generated code for adding orderlines to an order has a small
+bug with JSF.  To resolve it, you'll need to edit the file
+`manage-zoo/Deployed Resources/webapp/order/create.xhmtl` as shown
+below.
+
+![Edit the file](images/edit-create-file.png)
+
+Change line 86 from
+
+    ... :orderBeanOrderOrderlinesSelect').selectedIndex &lt; 1) { ...
+
+to
+
+    ... :orderBeanOrderOrderlinesSelect').selectedIndex &lt; 0) { ...
+
+and the selections will work fine.
 
