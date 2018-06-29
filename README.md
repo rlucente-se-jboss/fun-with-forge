@@ -13,8 +13,8 @@ The scripts I use were all tested and verified on Mac OSX with the
 the scripts to work with an alternative platform.
 
 ### Get the binaries
-Review the [README.md](dist/README.md) file in the dist folder and
-make sure you have all the prerequisite files available.  This
+Review the [README.md](dist/README.md) file in the `dist` folder
+and make sure you have all the prerequisite files available.  This
 project will run JBoss Enterprise Application Platform standalone,
 so you'll be installing it locally on your laptop or workstation.
 
@@ -34,7 +34,29 @@ alternative operating system.
     ./init-postgresql.sh
 
 This script creates no tables, but only establishes a database and
-user.
+user.  The following is a summary of what it does:
+
+    # stop the database if it's running
+
+    # wipe the existing PostgreSQL data
+    rm -fr $PGDATA
+
+    # initialize the database
+    initdb
+
+    # enable user authentication by editing $PGDATA/pg_hba.conf
+
+    # start the database and wait for it to be fully running
+
+    # create a username with password
+    psql -c "CREATE USER $PGUSER WITH PASSWORD '"$PGPASS"';" -d postgres
+
+    # create the database
+    createdb -O $PGUSER $PGDBNAME
+
+You don't need to run this script each time you build and run the
+application as the application will work fine if there's pre-existing
+data.
 
 ### Install EAP
 The following script will install EAP, apply the latest patch,
