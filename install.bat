@@ -1,5 +1,6 @@
 @REM #!/usr/bin/env bash
 @echo off
+set OLD_NOPAUSE=%NOPAUSE%
 
 set ADMIN_USER=admin
 set ADMIN_PASS="admin1jboss!"
@@ -42,7 +43,6 @@ set WORKDIR=D:\GitProjects\fun-with-forge
 set DISTDIR=%WORKDIR%\dist
 set JBOSS_HOME=%WORKDIR%\jboss-eap-%VER_INST_EAP%
 
-set OLD_NOPAUSE=%NOPAUSE%
 REM . $(dirname $0)/demo.conf
 
 PUSHD %WORKDIR%
