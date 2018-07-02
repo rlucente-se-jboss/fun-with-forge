@@ -44,6 +44,11 @@ REM POPD
 set WORKDIR=D:\GitProjects\fun-with-forge
 
 set DISTDIR=%WORKDIR%\dist
+	IF NOT ["%JBOSS_HOME%"] == [""] (
+	echo "The JBOSS_HOME is already set (%JBOSS_HOME%)."
+	if "x%OLD_NOPAUSE%" == "x" pause
+	exit /b 1
+	)
 set JBOSS_HOME=%WORKDIR%\jboss-eap-%VER_INST_EAP%
 
 REM . $(dirname $0)/demo.conf
@@ -122,13 +127,13 @@ REM
     echo # automatically generated script > config-ds.cli
     echo embed-server --server-config=standalone.xml >> config-ds.cli
     echo /subsystem=datasources/jdbc-driver=postgresql:add(driver-name=postgresql, driver-module-name=org.postgresql, driver-xa-datasource-class-name=org.postgresql.xa.PGXADataSource, driver-class-name=org.postgresql.Driver) >> config-ds.cli
-    echo data-source add  --name=%PGJNDI% --driver-name=postgresql >> config-ds.cli
-    echo     --jndi-name="java:jboss/datasources/%PGJNDI%" >> config-ds.cli
-    echo     --connection-url="jdbc:postgresql://localhost:5432/%PGDBNAME%" >> config-ds.cli
-    echo     --use-java-context=true --enabled=true >> config-ds.cli
-    echo     --user-name="%PGUSER%" --password="%PGPASS%" >> config-ds.cli
-    echo     --validate-on-match=true >> config-ds.cli
-    echo     --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker >> config-ds.cli
+    echo data-source add  --name=%PGJNDI% --driver-name=postgresql \>> config-ds.cli
+    echo     --jndi-name="java:jboss/datasources/%PGJNDI%" \>> config-ds.cli
+    echo     --connection-url="jdbc:postgresql://localhost:5432/%PGDBNAME%" \>> config-ds.cli
+    echo     --use-java-context=true --enabled=true \>> config-ds.cli
+    echo     --user-name="%PGUSER%" --password="%PGPASS%" \>> config-ds.cli
+    echo     --validate-on-match=true \>> config-ds.cli
+    echo     --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker \>> config-ds.cli
     echo     --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter >> config-ds.cli
     echo stop-embedded-server >> config-ds.cli
 
