@@ -50,7 +50,7 @@ REM . $(dirname $0)/demo.conf
 
 PUSHD %WORKDIR%
 
-    echo Check Java .....................
+    echo Check Java ......................
 
 	IF ["%JAVA_HOME%"] == [""] (
 	echo The JAVA_HOME is not set.
@@ -67,7 +67,7 @@ PUSHD %WORKDIR%
 	exit /b 1
 	)
 
-    echo Check EAP .....................
+    echo Check EAP .......................
 	IF exist "%JBOSS_HOME%\" ( 
 	echo EAP currently installed in %JBOSS_HOME%.
 	echo Please remove it before attempting install.
@@ -160,7 +160,7 @@ REM     rm -f config-ds.cli
     call %JBOSS_HOME%\bin\add-user.bat -p "%ADMIN_PASS%" -u "%ADMIN_USER%" --silent
 REM     ISOK
 
-REM     echo -n "Setting admin password .......... "
+REM     echo -n "Setting EAP admin password .......... "
 REM     ${JBOSS_HOME}\bin\add-user.sh -p "${ADMIN_PASS}" -u "${ADMIN_USER}" --silent
 REM     ISOK
 REM 
