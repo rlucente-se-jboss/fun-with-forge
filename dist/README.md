@@ -9,3 +9,5 @@ Make sure the following files are present in this directory:
 You can download the first three files from [Red Hat's Customer Portal](https://access.redhat.com/downloads/).
 The PostgreSQL web site has the [JDBC driver](https://jdbc.postgresql.org/download.html).
 
+Another PostgreSQL web site has the [Database server](https://www.postgresql.org/download/).
+Install version 10 or newer, the included db initialization doesn't work with 9.6. 
