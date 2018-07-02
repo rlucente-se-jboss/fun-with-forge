@@ -163,7 +163,7 @@ REM     rm -f config-ds.cli
 
     echo Setting admin password ..........
     call %JBOSS_HOME%\bin\add-user.bat -p "%ADMIN_PASS%" -u "%ADMIN_USER%" --silent
-REM     ISOK
+	echo     OK
 
 REM     echo -n "Setting EAP admin password .......... "
 REM     ${JBOSS_HOME}\bin\add-user.sh -p "${ADMIN_PASS}" -u "${ADMIN_USER}" --silent
