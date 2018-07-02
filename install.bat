@@ -1,5 +1,8 @@
 @REM #!/usr/bin/env bash
 @echo off
+REM save previous value of variable NOPAUSE to restore before exit
+REM the variable is to prevent waiting at the ends of called bat scripts
+REM the pause allows to see results when running in a shell window 
 set OLD_NOPAUSE=%NOPAUSE%
 
 set ADMIN_USER=admin
