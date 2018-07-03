@@ -23,7 +23,7 @@ REM    rm -fr %PGDATA%\*
     echo     OK
 
     echo "Initialize the database .......... "
-	echo "postgres" > pwdfilename.tmp
+	echo postgres> pwdfilename.tmp
     %PG_HOME%\bin\initdb.exe -U postgres -A password -E utf8 --pwfile=pwdfilename.tmp > nul
 	del pwdfilename.tmp
     echo     OK
