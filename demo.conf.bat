@@ -9,6 +9,7 @@ REM set VER_PATCH_EAP=7.1.3
 set PGJDBC=postgresql-42.2.2.jar
 set PG_HOME=D:\PostgreSQL\10
 set PGDATA=%PG_HOME%\data
+set PGSERV=postgresql-x64-10
 set PGDBNAME=managezoo
 set PGUSER=manager
 set PGPASS=manager
