@@ -38,5 +38,12 @@ REM The windows have some obsure ways to get dir info, hard coding value instead
 set WORKDIR=D:\GitProjects\fun-with-forge
 
 set DISTDIR=%WORKDIR%\dist
+
+REM IF NOT ["%JBOSS_HOME%"] == [""] (
+REM echo "The JBOSS_HOME is already set (%JBOSS_HOME%)."
+REM if "x%OLD_NOPAUSE%" == "x" pause
+REM exit /b 1
+REM )
+
 set JBOSS_HOME=%WORKDIR%\jboss-eap-%VER_INST_EAP%
 
