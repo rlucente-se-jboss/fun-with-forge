@@ -53,7 +53,9 @@ REM    echo     OK
     echo     OK
 
     echo "Create the database .............. "
-    %PG_HOME%\bin\createdb.exe -O %PGUSER% %PGDBNAME%
+    set PGPASSWORD=%PGPASS%
+    %PG_HOME%\bin\createdb.exe -O %PGUSER% %PGDBNAME% > nul
+    set PGPASSWORD=
     echo     OK
 POPD
 echo "Done."
