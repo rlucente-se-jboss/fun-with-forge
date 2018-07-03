@@ -4,7 +4,7 @@ set ADMIN_PASS="admin1jboss!"
 
 set VER_DIST_EAP=7.1.0
 set VER_INST_EAP=7.1
-set VER_PATCH_EAP=7.1.3
+REM set VER_PATCH_EAP=7.1.3
 
 set PGJDBC=postgresql-42.2.2.jar
 set PG_HOME=D:\PostgreSQL\10
