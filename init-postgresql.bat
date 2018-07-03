@@ -48,7 +48,8 @@ REM    done
 REM    echo     OK
 
     echo "Create the user .................. "
-    %PG_HOME%\bin\psql.exe -c "CREATE USER %PGUSER% WITH PASSWORD '"%PGPASS%"';" -d postgres > nul
+    set PGPASSWORD=postgres
+    %PG_HOME%\bin\psql.exe -c "CREATE USER %PGUSER% WITH PASSWORD '%PGPASS%' LOGIN NOSUPERUSER INHERIT CREATEDB CREATEROLE NOREPLICATION;" -d postgres -U postgres > nul
     echo     OK
 
     echo "Create the database .............. "
