@@ -47,3 +47,4 @@ REM )
 
 set JBOSS_HOME=%WORKDIR%\jboss-eap-%VER_INST_EAP%
 
+set UNZIP=c:\Program Files\7-Zip\7z.exe
