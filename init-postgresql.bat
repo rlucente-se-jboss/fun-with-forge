@@ -4,11 +4,11 @@ REM . `dirname $0`/demo.conf
 
 call demo.conf.bat
 
-echo Do not use.
-echo Re-initialization of the database is not correct
-echo    added configuration line prevents posgres from starting.
-pause
-exit /b 1 
+REM echo Do not use.
+REM echo Re-initialization of the database is not correct
+REM echo    added configuration line prevents posgres from starting.
+REM pause
+REM exit /b 1 
 
 PUSHD %WORK_DIR%
     echo "Stop database if running ......... "
