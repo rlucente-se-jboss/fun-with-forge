@@ -5,53 +5,9 @@ REM the variable is to prevent waiting at the ends of called bat scripts
 REM the pause allows to see results when running in a shell window
 set OLD_NOPAUSE=%NOPAUSE%
 
-set ADMIN_USER=admin
-set ADMIN_PASS="admin1jboss!"
-
-set VER_DIST_EAP=7.1.0
-set VER_INST_EAP=7.1
-REM set VER_PATCH_EAP=7.1.3
-
-set PGJDBC=postgresql-42.2.2.jar
-set PGDATA=D:\PostgreSQL\10\data
-set PGDBNAME=managezoo
-set PGUSER=manager
-set PGPASS=manager
-set PGJNDI=ManageZooDS
-
-set UNZIP=c:\Program Files\7-Zip\7z.exe
-
-REM function ISOK {
-REM   if [[ $? -eq 0 ]]
-REM   then
-REM     echo "[OK]"
-REM   else
-REM     echo "[FAILED]"
-REM   fi
-REM }
-
-REM function PUSHD {
-REM   pushd $1 &> /dev/null
-REM }
-
-REM function POPD {
-REM   popd &> /dev/null
-REM }
-
-REM PUSHD $(dirname $0)
-REM WORKDIR=$(pwd)
-REM POPD
-set WORKDIR=D:\GitProjects\fun-with-forge
-
-set DISTDIR=%WORKDIR%\dist
-	IF NOT ["%JBOSS_HOME%"] == [""] (
-	echo "The JBOSS_HOME is already set (%JBOSS_HOME%)."
-	if "x%OLD_NOPAUSE%" == "x" pause
-	exit /b 1
-	)
-set JBOSS_HOME=%WORKDIR%\jboss-eap-%VER_INST_EAP%
-
 REM . $(dirname $0)/demo.conf
+
+call demo.conf.bat
 
 PUSHD %WORKDIR%
 
